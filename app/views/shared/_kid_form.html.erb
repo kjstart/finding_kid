@@ -1,0 +1,28 @@
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :gender %>
+            <%= f.text_field :gender %>
+  <!--    <%= f.select :gender, %w{Male Female}, :include_blank => true %> -->
+
+      <%= f.label :age %>
+      <%= f.text_field :age %>
+ <!--      <%= f.select :age, 0..17 %> -->
+
+       <%= f.label :time %>
+      <%= f.date_select :time, start_year: 2010, end_year: Date.today.year %>
+
+      <%= f.label :picture %>
+    <%= f.text_field :picture %>
+
+    <%= f.label :appearance, "Appearances (separated by commas)" %>
+      <%= f.text_field :appearance_list %> 
+
+    <%= f.label :place, "Places (separated by commas)" %>
+      <%= f.text_field :place_list %> 
+
+      <%= f.label :credits %>
+      <%= f.text_field :credits %>
+
+      <%= f.label :lost, "Report Lost" %>
+      <%= f.check_box :lost %>

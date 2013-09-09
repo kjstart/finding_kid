@@ -1,0 +1,1 @@
+<img src="http://ttg.im/pic/cards/<%=@card.get("face")%>.gif"/>

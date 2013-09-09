@@ -1,0 +1,41 @@
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
+      <section>
+        <%= link_to "Report Kid", report_path,
+                                class: "btn btn-large btn-primary" %>
+        <%= link_to "Find Kid", kids_path,
+                                class: "btn btn-large btn-primary" %>
+      </section>
+      <section>
+        Finsh tasks to earn credits</b>
+        <p><a href="#">Facebook</a></p>
+      </section>
+    </aside>
+    <div class="span8">
+      <h3>Latest comments for my kid</h3>
+            <ol class="microposts">
+      <%= render @kidcomments %>
+    </ol>
+    </div>
+  </div>
+<% else %>
+  <div class="center hero-unit">
+    <h1>Welcome to Finding Kid</h1>
+
+    <h2>
+      Helping the lost child find home
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path,
+                                class: "btn btn-large btn-primary" %>
+  </div>
+
+  <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>
+<% end %>

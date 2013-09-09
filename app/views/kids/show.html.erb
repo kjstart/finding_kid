@@ -1,0 +1,39 @@
+<% provide(:title, @kid.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= kid_picture @kid, size: 150 %>
+        <%= @kid.name %> <% if @kid.lost %> (Lost) <% else %> (Waif) <%end%>
+      </h1>
+    </section>
+    <section>
+      <span>
+        Gender: <%= @kid.gender %>
+      </span>
+      <span>
+        Age: <%= @kid.age %>
+      </span>
+      <span>
+        Appearances: <%= raw @kid.appearance_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+      </span>    
+      <span>
+        Places: <%= raw @kid.place_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+      </span>      
+    </section>
+  </aside>
+    <div class="span8">
+      <section>
+        <%= render 'shared/kid_comment_form' %>
+      </sectin>
+    </div>
+  <div class="span8">
+      <% if @kid.kid_comments.any? %>
+      <h3>Comment (<%= @kid.kid_comments.count %>)</h3>
+      <ol class="microposts">
+        <%= render @kidcomments %>
+      </ol>
+      <%= will_paginate @kidcomments %>
+    <% end %>
+  </div>
+</div>

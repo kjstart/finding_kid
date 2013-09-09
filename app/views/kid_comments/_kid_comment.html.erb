@@ -1,0 +1,12 @@
+<li>
+<span class="content"><a href="<%= user_path(kid_comment.user) %>">
+  <%= gravatar_for(kid_comment.user)%></a> <%= kid_comment.comment %> |   <% if current_user?(kid_comment.user) %>
+    <%= link_to "delete", kidcomments_path, method: :delete,
+                                     data: { confirm: "You sure?" },
+                                     title: kid_comment.comment %>
+  <% end %></span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(kid_comment.created_at) %> ago.
+  </span>
+
+</li>

@@ -1,0 +1,2 @@
+module KidcommentsHelper
+end

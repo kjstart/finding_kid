@@ -1,0 +1,15 @@
+<% provide(:title, 'Report Kid') %>
+<%= stylesheet_link_tag "http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/redmond/jquery-ui.css", "application" %>
+<%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js", "http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.1/jquery-ui.min.js", "application" %>
+
+<h1>Report Kid</h1>
+
+<div class="row">
+	<div class="span6 offset3">
+	<%= form_for(@kid, :html => { :multipart => true }) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+		<%= render 'shared/kid_form', f: f %>
+		<%= f.submit "Report Kid", class: "btn btn-large btn-primary" %>
+	<% end %>
+	</div>
+</div>

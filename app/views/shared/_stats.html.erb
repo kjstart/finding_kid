@@ -1,0 +1,5 @@
+<% @user ||= current_user %>
+<div class="stats">
+  <%= pluralize(current_user.credit, "credit") %>
+
+</div>

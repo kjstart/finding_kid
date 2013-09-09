@@ -1,0 +1,9 @@
+<% if @player.get('curuser'): %>
+		<td><%=@player.get('rank')%></td>
+		<td><font color="red"><%=@player.get('name')%></font></td>
+		<td><%=@player.get('credit')%></td>
+<% else: %>
+		<td><%=@player.get('rank')%></td>
+		<td><%=@player.get('name')%></td>
+		<td><%=@player.get('credit')%></td>
+<% end %>

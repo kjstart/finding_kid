@@ -1,0 +1,9 @@
+<li>
+<li>
+        <%=kid_picture kid%>
+        <%=link_to kid.name, kid %> <% if kid.lost %> (Lost) <% else %> (Waif) <%end%>
+	<% if current_user.admin? %>
+	 | <%=link_to "delete", kid, method: :delete, data: {confirm: "Delete kid?"} %>
+	<% end %>
+</li>
+
